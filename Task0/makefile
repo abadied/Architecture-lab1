@@ -7,7 +7,7 @@ all: main
 # Tool invocations
 # Executable "main" depends on the files hello.o and run.o.
 main: main.o add.o numbers.o
-	gcc -g -m32 -Wall -o numbers numbers.o main.o add.o
+	gcc -g -m32 -Wall -o main main.o numbers.o add.o
 
 # Depends on the source and header files
 numbers.o: numbers.c
