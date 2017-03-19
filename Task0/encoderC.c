@@ -9,17 +9,22 @@ FILE* input = stdin;
 int ver = 0;
 int number;
 for(int i = 1; i < argc; i++){
-if(strcmp(argv[i],"-o") == 0)
-   output = fopen(argv[++i],"w");
-else if(argv[i][0] == '+')
-    ver =1;
-    else if(argv[i][0] == '-'){
-        ver = 2;
-    }
-    else{
-    printf("invalid parameter - %s\n",argv[i]);
-    return 1;
-    }
+	if(strcmp(argv[i], "-i") == 0){
+	    input = fopen(argv[++i],"r");
+	}
+	else if(strcmp(argv[i],"-o") == 0){
+	   output = fopen(argv[++i],"w");
+	}
+	else if(argv[i][0] == '+')
+	ver =1;
+	else if(argv[i][0] == '-'){
+	ver = 2;
+	}
+	else{
+	printf("invalid parameter - %s\n",argv[i]);
+	return 1;
+	}
+	
 }
 if(ver != 0)
     number = atoi(argv[1] + 1);
